@@ -29,4 +29,16 @@ app.controller('MainController', function ($scope, FlashCardsFactory) {
 
     $scope.getAllCards();
 
+    $scope.cheatFilter = function() {
+        angular.forEach($scope.flashCards, function(flashCard) {
+            angular.forEach(flashCard.answers, function(answer) {
+                if (answer.correct) {
+                    answer.cheatFiltered = false;
+                } else {
+                    answer.cheatFiltered = true;
+                }
+            })
+        })
+    }
+
 });
