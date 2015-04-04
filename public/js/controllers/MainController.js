@@ -1,4 +1,5 @@
 app.controller('MainController', function ($scope, FlashCardsFactory) {
+    $scope.loaded = false;
 
     $scope.flashCards = [];
 
@@ -15,6 +16,7 @@ app.controller('MainController', function ($scope, FlashCardsFactory) {
         $scope.chosenCategory = 'All';
         FlashCardsFactory.getFlashCards().then(function (cards) {
             $scope.flashCards = cards;
+            $scope.loaded = true;
         });
     };
 
