@@ -1,4 +1,4 @@
-app.directive('flashCard', function () {
+app.directive('flashCard', function (ScoreFactory) {
     return {
         restrict: 'E',
         templateUrl: 'templates/flashcard.html',
